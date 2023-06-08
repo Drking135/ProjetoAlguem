@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Para ela</title>
+
+ <style>
+  body {
+    background-color: rgb(203, 151, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    background-color: rgb(244, 167, 180);
+    margin: auto;
+    width: 50%;
+
+  }
+  .carta-container {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carta-imagem {
+    background-image: url(src/imagens/carta-fechada.png); /* Substitua "carta-fechada.png" pelo caminho para a imagem da carta fechada */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+  }
+  
+  .carta-conteudo {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .carta-conteudo h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .carta-conteudo p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .assinatura {
+    font-style: italic;
+  }
+</style>
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var cartaImagem = document.querySelector('.carta-imagem');
+    var cartaConteudo = document.querySelector('.carta-conteudo');
+    var aberta = false;
+    
+    cartaImagem.addEventListener('click', function() {
+      if (aberta) {
+        cartaImagem.style.backgroundImage = "url(/src/imagens/carta-fechada.png)"; /* Substitua "carta-fechada.png" pelo caminho para a imagem da carta fechada */
+        cartaConteudo.style.display = 'none';
+        aberta = false;
+      } else {
+        cartaImagem.style.backgroundImage = "url(/src/imagens/carta-aberta.png)"; /* Substitua "carta-aberta.png" pelo caminho para a imagem da carta aberta */
+        cartaConteudo.style.display = 'block';
+        aberta = true;
+      }
+    });
+  });
+</script>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="carta-container">
+      <div class="carta-imagem"></div>
+      <div class="carta-conteudo">
+        <h1>Carta de Exemplo</h1>
+      
+        <p>Olá [Nome do Destinatário],</p>
+      
+        <p>Espero que esta carta encontre você bem. Estou escrevendo para...</p>
+      
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada...</p>
+      
+        <p>Atenciosamente,</p>
+      
+        <p class="assinatura">[Seu Nome]</p>
+      </div>
+  </div>  
+</div>
+</body>
+</html>
